@@ -46,9 +46,9 @@ class TimeWindowSampleFrames_A:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
-            num_person (int): The number of person(max).(即call的num_persons)
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
+            num_person (int): The number of person(max).
             real_num_person (list(int)): The number of people in every frame.
         """
 
