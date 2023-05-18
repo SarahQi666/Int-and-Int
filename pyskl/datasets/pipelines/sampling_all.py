@@ -18,7 +18,7 @@ class TimeWindowSampleFrames_all:
     are "frame_inds", "clip_len", "frame_interval" and "num_clips".
 
     Args:
-        clip_len (int): Frames of each sampled output clip. 是n？
+        clip_len (int): Frames of each sampled output clip.
         num_clips (int): Number of clips to be sampled. Default: 1.
         seed (int): The random seed used during test time. Default: 255.
     """
@@ -41,20 +41,14 @@ class TimeWindowSampleFrames_all:
             for k, v in deprecated_kwargs.items():
                 warning_r0(f'Arg name: {k}; Arg value: {v}')
 
-
-
-
-
-
-
     def _jnt_next_sv(self,num_frames,num_keypoint,num_person,real_num_person,kp):
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
-            num_person (int): The number of person(max).(即call的num_persons)
-            real_num_person (list(int)): The number of people in every frame.(即call的num_persons[t],名得改)
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
+            num_person (int): The number of person(max).
+            real_num_person (list(int)): The number of people in every frame.
         """
 
         sv=[] 
@@ -86,10 +80,10 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
-            num_person (int): The number of person(max).(即call的num_persons)
-            real_num_person (list(int)): The number of people in every frame.(即call的num_persons[t],名得改)
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
+            num_person (int): The number of person(max).
+            real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
         
@@ -122,8 +116,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -183,8 +177,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -246,8 +240,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -317,8 +311,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -388,8 +382,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -461,8 +455,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -536,8 +530,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -620,8 +614,8 @@ class TimeWindowSampleFrames_all:
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -725,9 +719,6 @@ class TimeWindowSampleFrames_all:
         sv_angC_avr=self._angC_avr_sv(num_frames,num_keypoint,num_person,real_num_person,kp)
         sv_angL_avr=self._angL_avr_sv(num_frames,num_keypoint,num_person,real_num_person,kp)
 
-
-
-
         theta=[6.928,6.928,6.869,6.869,6.869,6.869,7.026,7.026,7.026,7.026] 
 
         sv_J=list(np.add([(theta[0]/sum(theta)/max(float("1e-8"),max(sv_jnt_next)))*x for x in sv_jnt_next],[(theta[1]/sum(theta)/max(float("1e-8"),max(sv_jnt_avr)))*x for x in sv_jnt_avr]))
@@ -744,8 +735,6 @@ class TimeWindowSampleFrames_all:
         for clip_idx in range(self.num_clips):
 
             svmax_idx=sv.index(max(sv))
-
-
 
             if num_frames < clip_len:
                 inds = np.arange(0, clip_len)
@@ -784,9 +773,6 @@ class TimeWindowSampleFrames_all:
         sv_angC_avr=self._angC_avr_sv(num_frames,num_keypoint,num_person,real_num_person,kp)
         sv_angL_avr=self._angL_avr_sv(num_frames,num_keypoint,num_person,real_num_person,kp)
 
-
-
-
         theta=[6.928,6.928,6.869,6.869,6.869,6.869,7.026,7.026,7.026,7.026] 
 
         sv_J=list(np.add([(theta[0]/sum(theta)/max(float("1e-8"),max(sv_jnt_next)))*x for x in sv_jnt_next],[(theta[1]/sum(theta)/max(float("1e-8"),max(sv_jnt_avr)))*x for x in sv_jnt_avr]))
@@ -798,13 +784,9 @@ class TimeWindowSampleFrames_all:
         sv_A=list(np.add([x for x in sv_A1],[x for x in sv_A2]))
         sv=list(np.add(np.add([x for x in sv_J],[x for x in sv_B]),[x for x in sv_A]))
 
-
-
         for clip_idx in range(self.num_clips):
 
             svmax_idx=sv.index(max(sv))
-
-
 
             if num_frames < clip_len:
                 inds = np.arange(0, clip_len)
