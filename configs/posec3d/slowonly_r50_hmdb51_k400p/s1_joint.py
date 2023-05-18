@@ -67,7 +67,7 @@ data = dict(
     val=dict(type=dataset_type, ann_file=ann_file, split='test1', pipeline=val_pipeline),
     test=dict(type=dataset_type, ann_file=ann_file, split='test1', pipeline=test_pipeline))
 
-optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)  # this lr is used for 8 gpus
+optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001) 
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 
 lr_config = dict(policy='step', step=[9, 11])
@@ -77,7 +77,7 @@ evaluation = dict(interval=1, metrics=['top_k_accuracy', 'mean_class_accuracy'],
 log_config = dict(interval=20, hooks=[dict(type='TensorboardLoggerHook')])
 log_level = 'INFO'
 work_dir = './work_dirs/posec3d/slowonly_r50_hmdb51_k400p/s1_joint'
-load_from = 'https://download.openmmlab.com/mmaction/skeleton/posec3d/k400_posec3d-041f49c6.pth'  # noqa: E501
+load_from = 'https://download.openmmlab.com/mmaction/skeleton/posec3d/k400_posec3d-041f49c6.pth' 
 
 find_unused_parameters = False
 
