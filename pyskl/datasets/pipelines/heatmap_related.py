@@ -15,18 +15,17 @@ class GeneratePoseTarget:
     added or modified keys are "imgs".
 
     Args:
-        sigma (float): The sigma of the generated gaussian map. Default: 0.6. 即σ
+        sigma (float): The sigma of the generated gaussian map. Default: 0.6.
         use_score (bool): Use the confidence score of keypoints as the maximum
-            of the gaussian maps. Default: True. 即用不用ck
-        with_kp (bool): Generate pseudo heatmaps for keypoints. Default: True. 即是否产生Jk
+            of the gaussian maps. Default: True.
+        with_kp (bool): Generate pseudo heatmaps for keypoints. Default: True.
         with_limb (bool): Generate pseudo heatmaps for limbs. At least one of
-            'with_kp' and 'with_limb' should be True. Default: False. 即是否产生Lk
+            'with_kp' and 'with_limb' should be True. Default: False.
         skeletons (tuple[tuple]): The definition of human skeletons.
             Default: ((0, 1), (0, 2), (1, 3), (2, 4), (0, 5), (5, 7), (7, 9),
                       (0, 6), (6, 8), (8, 10), (5, 11), (11, 13), (13, 15),
                       (6, 12), (12, 14), (14, 16), (11, 12)),
-            which is the definition of COCO-17p skeletons. 即kp自然连接
-        下面都跟flipped heatmaps有关：
+            which is the definition of COCO-17p skeletons.
         double (bool): Output both original heatmaps and flipped heatmaps.
             Default: False.
         left_kp (tuple[int]): Indexes of left keypoints, which is used when
@@ -114,19 +113,6 @@ class GeneratePoseTarget:
             arr[st_y:ed_y, st_x:ed_x] = np.maximum(arr[st_y:ed_y, st_x:ed_x], patch) 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     def generate_a_limb_heatmap(self, arr, starts, ends, start_values, end_values):
         """Generate pseudo heatmap for one limb in one frame.
 
@@ -184,18 +170,11 @@ class GeneratePoseTarget:
 
             coeff = (d2_start - d2_end + d2_ab) / 2. / d2_ab 
 
-
             a_dominate = coeff <= 0
 
             b_dominate = coeff >= 1
 
             seg_dominate = 1 - a_dominate - b_dominate
-
-
-
-
-
-
 
             position = np.stack([x + y_0, y + x_0], axis=-1) 
 
@@ -221,7 +200,7 @@ class GeneratePoseTarget:
 
         Args:
             arr (np.ndarray): The array to store the generated heatmaps. Shape: V * img_h * img_w.
-            kps (np.ndarray): The coordinates of keypoints in this frame. Shape: M * V * 2.所以人数单独占一个维度？！
+            kps (np.ndarray): The coordinates of keypoints in this frame. Shape: M * V * 2.
             max_values (np.ndarray): The confidence score of each keypoint. Shape: M * V.
 
         Returns:
@@ -305,9 +284,6 @@ class GeneratePoseTarget:
                     f'left_kp={self.left_kp}, '
                     f'right_kp={self.right_kp})')
         return repr_str
-
-
-
 
 
 @PIPELINES.register_module()
