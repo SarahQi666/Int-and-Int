@@ -200,26 +200,25 @@ class Bottleneck3d(nn.Module):
 class ResNet3d(nn.Module):
     """ResNet 3d backbone.
 
-    看附录Table 12.
     Args:
-        depth (int): Depth of resnet, from {18, 34, 50, 101, 152}. Default: 50. 用的是ResNet50
+        depth (int): Depth of resnet, from {18, 34, 50, 101, 152}. Default: 50.
         pretrained (str | None): Name of pretrained model.
-        stage_blocks (tuple | None): Set number of stages for each res layer. Default: None. 每个Resnet stage有几个block
+        stage_blocks (tuple | None): Set number of stages for each res layer. Default: None.
         pretrained2d (bool): Whether to load pretrained 2D model. Default: True.
         in_channels (int): Channel num of input features. Default: 3.
-        base_channels (int): Channel num of stem output features. Default: 64. stem是conv
-        out_indices (tuple[int]): Indices of output feature. Default: (3, ). 要的特征所出自res block的序号
-        num_stages (int): Resnet stages. Default: 4. 几个Resnet Layer
+        base_channels (int): Channel num of stem output features. Default: 64.
+        out_indices (tuple[int]): Indices of output feature. Default: (3, ).
+        num_stages (int): Resnet stages. Default: 4.
         spatial_strides (tuple[int]): Spatial strides of residual blocks   of each stage. Default: (1, 2, 2, 2).
         temporal_strides (tuple[int]): Temporal strides of residual blocks of each stage. Default: (1, 1, 1, 1).
-        conv1_kernel (tuple[int]): Kernel size of the first conv layer. Default: (3, 7, 7). 3是啥？？？
+        conv1_kernel (tuple[int]): Kernel size of the first conv layer. Default: (3, 7, 7).
         conv1_stride (tuple[int]): Stride of the first conv layer. Default: (1, 2).
         pool1_stride (tuple[int]): Stride of the first pooling layer. Default: (1, 2).
         advanced (bool): Flag indicating if an advanced design for downsample is adopted. Default: False.
         frozen_stages (int): Stages to be frozen (all param fixed). -1 means not freezing any parameters. Default: -1.
-        inflate (tuple[int]): Inflate Dims of each block. Default: (1, 1, 1, 1). ？？？
+        inflate (tuple[int]): Inflate Dims of each block. Default: (1, 1, 1, 1).
         inflate_style (str): '3x1x1' or '3x3x3'. which determines the kernel sizes and padding strides
-            for conv1 and conv2 in each block. Default: '3x1x1'. 就是形式：abb或aaa
+            for conv1 and conv2 in each block. Default: '3x1x1'.
         conv_cfg (dict): Config for conv layers. required keys are 'type'. Default: 'dict(type='Conv3d')'.
         norm_cfg (dict): Config for norm layers. required keys are 'type' and 'requires_grad'.
             Default: 'dict(type='BN3d', requires_grad=True)'.
