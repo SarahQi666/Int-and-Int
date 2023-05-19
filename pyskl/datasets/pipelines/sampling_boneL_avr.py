@@ -18,7 +18,7 @@ class TimeWindowSampleFrames_boneL_avr:
     are "frame_inds", "clip_len", "frame_interval" and "num_clips".
 
     Args:
-        clip_len (int): Frames of each sampled output clip. 是n？
+        clip_len (int): Frames of each sampled output clip.
         num_clips (int): Number of clips to be sampled. Default: 1.
         seed (int): The random seed used during test time. Default: 255.
     """
@@ -40,18 +40,13 @@ class TimeWindowSampleFrames_boneL_avr:
             warning_r0('[TimeWindowSampleFrames] The following args has been deprecated: ')
             for k, v in deprecated_kwargs.items():
                 warning_r0(f'Arg name: {k}; Arg value: {v}')
-
-
-
-
-
     
     def _boneL_avr_sv(self,num_frames,num_keypoint,num_person,real_num_person,kp):
         """Define the intensity(sv) of human movement,which decides the position of the clip.
 
         Args:
-            num_frames (int): The number of frames.（“t总”）
-            num_keypoint (int): The number of keypoints.（“N”）
+            num_frames (int): The number of frames.
+            num_keypoint (int): The number of keypoints.
             real_num_person (list(int)): The number of people in every frame.
         """
         sv=[] 
@@ -114,13 +109,7 @@ class TimeWindowSampleFrames_boneL_avr:
             sv_t=sv_t/max(1,real_num_person[t])
             sv.append(sv_t)
 
-
-
         return sv
-
-    
-
-
 
     def _get_train_clips(self, num_frames, clip_len,num_keypoint,num_person,real_num_person,kp):
         """Sample indices for motion clips.
@@ -134,8 +123,6 @@ class TimeWindowSampleFrames_boneL_avr:
         for clip_idx in range(self.num_clips):
 
             svmax_idx=sv.index(max(sv))
-
-
 
             if num_frames < clip_len:
                 inds = np.arange(0, clip_len)
@@ -167,8 +154,6 @@ class TimeWindowSampleFrames_boneL_avr:
         for clip_idx in range(self.num_clips):
 
             svmax_idx=sv.index(max(sv))
-
-
 
             if num_frames < clip_len:
                 inds = np.arange(0, clip_len)
