@@ -22,4 +22,4 @@ bash tools/dist_test.sh {config_name} {checkpoint} {num_gpus} --out {output_file
 bash tools/dist_test_2s.sh {config_name_Integrity} {config_name_Intensity} {checkpoint_Integrity} {checkpoint_Intensity} {num_gpus} --eval top_k_accuracy mean_class_accuracy --out {output_file}
 ```
 ## Contact
-For any question, feel free to contact: sarah.qixiangyuan@gmail.com
+For any question, feel free to contact: xiangyuan202103@163.com
